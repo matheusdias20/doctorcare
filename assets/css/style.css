@@ -7,16 +7,24 @@
 :root {
     font-size: 62.5%; /* 1rem = 10px */
 
-    --brand-green: #00856F;
-    --brand-green-light: #DCE9E2;
-    --brand-green-light-02: #F7F9F9;
+    --brand-red: #C92A2A;
+    --brand-red-light: #FFE3E3;
+    --brand-red-light-02: #FFF5F5;
     --brand-beige: #FFFAF1;
-    --brand-green-hover: #00453A;
+    --brand-red-hover: #821515;
 
     --gray-headline: #212529;
     --gray-paragraph: #495057;
     --white: #FFF;
 
+
+    --nav-height: 7.2rem;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
 body {
@@ -24,25 +32,170 @@ body {
     font-size: 1.6rem;
 }
 
+li, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
 button {
     border: none;
 }
 
-header {
-    padding-top: 4rem;
-    background-color: var(--brand-green-light);
+.wrapper {
+    width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
 }
 
-.main-text,
-.main-img {
-    width: 32.7rem;
-    margin-left: auto;
-    margin-right: auto; 
+header {
+    margin-top: calc(4rem + var(--nav-height));
 }
+
+header::before {
+    content: "";
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    display: block;
+    background-color: var(--brand-red-light);
+
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+/* Navbar */
+
+nav {
+    padding: 1.6rem 2.4rem;
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav.scroll {
+    background-color: var(--brand-red);
+    width: 100vw;
+}
+
+nav.scroll svg:nth-child(1) path{
+    fill: white;
+}
+
+nav.scroll svg:not(:nth-child(1)) path{
+    stroke: white;
+}
+
+nav .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Menu Expanded */
+
+.menu {
+    text-align: center;
+}
+
+.menu,
+.menu-close,
+body.menu-expanded .menu-open  {
+    display: none;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .menu-close {
+    display: block;
+}
+
+body.menu-expanded {
+    overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
+body.menu-expanded .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--brand-red);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav {
+    position: relative;
+}
+
+body.menu-expanded .menu ul:nth-child(1) {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 3.1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+}
+
+body.menu-expanded .menu ul li a {
+    color: var(--white);
+}
+
+body.menu-expanded .btn-menu {
+    background-color: var(--white);
+    color: var(--brand-red);
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+
+    display: inline-block;
+
+    padding: 1.6rem 3.2rem;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+body.menu-expanded .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button {
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .logo path{
+    fill: white;
+}
+
+body.menu-expanded nav button path{
+    stroke: white;
+}
+
+/* Main */
 
 .main-text h4 {
     font-size: 1.4rem;
-    color: var(--brand-green);
+    color: var(--brand-red);
     text-transform: uppercase;
     line-height: 150%;
     text-align: center;
@@ -70,7 +223,7 @@ header {
 }
 
 .main-text button {
-    background-color: var(--brand-green);
+    background-color: var(--brand-red);
     color: var(--white);
     border-radius: 4rem;
 
@@ -91,3 +244,47 @@ header {
     margin-right: auto;
     margin-bottom: 6rem;
 }
+
+.main-img img{
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+/* Stats */
+
+.stats {
+    width: 32.7rem;
+    height: 47rem;
+
+    margin-inline: auto;
+    text-align: center;
+
+    background-color: var(--brand-red-light-02);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: .6rem;
+}
+
+.stat:not(:last-child) {
+    margin-bottom: 6rem;
+}
+
+.stat h3 {
+    color: var(--gray-headline);
+    line-height: 130%;
+    font-size: 4.8rem;
+    font-weight: 700;
+    margin-bottom: .4rem;
+}
+
+.stat p {
+    color: var(--brand-red);
+    line-height: 150%;
+    font-size: 1.6rem;
+}
+
