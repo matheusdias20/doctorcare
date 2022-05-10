@@ -39,6 +39,7 @@ body {
     font-size: 1.6rem;
 
     overflow: overlay;
+
     background-color: #F7F9F9;
 }
 
@@ -409,6 +410,94 @@ body.menu-expanded nav button path{
     margin-bottom: 6rem;
 }
 
+/* Testimonials */
+
+.testimonials .wrapper {
+    display: block;
+}
+
+
+.testimonials h4 {
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: var(--brand-red);
+}
+
+.testimonials h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--gray-headline);
+    text-align: center;
+
+    margin-top: 1.6rem;
+    margin-bottom: 6rem;
+}
+
+.testimonial-container {
+    overflow-x: hidden;
+}
+
+.testimonial-card {
+    background-color: var(--brand-red-light);
+    border-radius: .4rem;
+}
+
+
+.testimonial-card blockquote p {
+    position: relative;
+    text-indent: 2.3rem;
+    margin-bottom: 2rem;
+    line-height: 2.4rem;
+}
+
+.testimonial-card blockquote p span {
+    font-size: 700;
+    font-size: 4rem;
+    font-family: serif;
+
+    position: absolute;
+    top: .8rem;
+    left: -2.3rem;
+    color: var(--brand-red);
+}
+
+.testimonial-card blockquote cite {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    color: var(--brand-red);
+    font-weight: 700;
+    line-height: 2.8rem;
+}
+
+.testimonials {
+    position: relative;
+}
+
+
+.swiper-slide {
+    height: auto;
+    padding: 4rem 2rem;
+}
+
+#swiper-pagination{
+    bottom: 5rem;
+}
+
+.swiper-pagination-bullet {
+    width: .75rem;
+    height: .75rem;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--brand-red);
+}
+
 
 /* Contact */
 
@@ -508,6 +597,8 @@ body.menu-expanded nav button path{
 
     transform: translateY(100%);
     transition: 200ms;
+
+    z-index: 200;
 }
 
 #backToTopButton.show {
@@ -762,6 +853,22 @@ body.menu-expanded nav button path{
         width: 30%;
         flex-grow: 1;
         margin-bottom: 0;
+    }
+
+    /* Testimonials */
+
+    #testimonials h2 {
+        width: 48.1rem;
+        margin-inline: auto;
+    }
+
+    .testimonial-card blockquote p {
+        text-align: justify;
+    }
+
+    .testimonial-card blockquote img {
+        width: 42px;
+        height: 42px;
     }
 
     /* About */

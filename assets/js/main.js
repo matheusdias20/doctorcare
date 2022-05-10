@@ -77,3 +77,19 @@ ScrollReveal({
     #about,
     #about img,
 `);
+
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+    spaceBetween: 32,
+    breakpoints: {
+        1024: {
+            slidesPerView: 2,
+            setWrapperSize: true,
+        }
+    }
+});
