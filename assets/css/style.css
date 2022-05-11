@@ -384,7 +384,7 @@ body.menu-expanded nav button path{
 /* About */
 
 .about {
-    background-color: var(--brand-red-light-02);
+    background-color: var(--brand-red-light);
 }
 
 .about h4 {
@@ -442,7 +442,7 @@ body.menu-expanded nav button path{
 }
 
 .testimonial-card {
-    background-color: var(--brand-red-light);
+    background-color: var(--brand-red-light-02);
     border-radius: .4rem;
 }
 
@@ -498,6 +498,81 @@ body.menu-expanded nav button path{
     background-color: var(--brand-red);
 }
 
+/* Company */
+
+.company {
+    padding-top: 8rem;
+    padding-bottom: 0;
+}
+
+.company .wrapper h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    color: var(--gray-headline);
+    margin-bottom: 4.8rem;
+}
+
+.company .company-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+/* Schedule */
+
+.schedule {
+    position: relative;
+}
+
+
+.schedule::after {
+    content: '';
+
+    width: 100%;
+    height: calc(25rem + var(--nav-height));
+    display: block;
+    background-color: var(--brand-red-light);
+
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+.schedule-container {
+    background-color: var(--brand-red);
+    padding: 10rem;
+    border-radius: .75rem;
+}
+
+
+.schedule-container h2 {
+    color: var(--white);
+    text-align: center;
+    line-height: 4.2rem;
+
+    margin-bottom: 3rem;
+}
+
+.schedule-container a {
+    background-color: var(--white);
+    color: var(--brand-red);
+
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: auto;
+    padding-block: 1.6rem;
+    border-radius: 4rem;
+    gap: 1.6rem;
+
+}
 
 /* Contact */
 
@@ -708,11 +783,9 @@ body.menu-expanded nav button path{
         color: var(--brand-red);
         border: 1px solid var(--brand-red);
         border-radius: 4rem;
-        text-transform: uppercase;
         font-weight: 700;
         font-size: 1.4rem;
-        list-style: 1.8rem;
-
+        line-height: 2.1rem;
         transition: all ease .2s;
     }
 
@@ -871,7 +944,54 @@ body.menu-expanded nav button path{
         height: 42px;
     }
 
+    #swiper-pagination{
+        bottom: 10rem;
+    }
+
+    /* Company */
+
+    #company {
+        padding-top: 5rem;
+    }
+
+
+
+    /* Schedule */
+
+    #schedule {
+        padding-bottom: 0;
+    }
+
+    .schedule::after {
+        height: calc(10rem + var(--nav-height));
+    }
+
+    #schedule .schedule-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #schedule .schedule-container h2 {
+        text-align: start;
+        width: 49.7rem;
+        margin-bottom: 0;
+    }
+
+    #schedule .schedule-container a {
+        margin-inline: 0;
+        padding: 0;
+        padding: 1.6rem 3.2rem;
+
+        transition: all ease .2s;
+    }
+
+    #schedule .schedule-container a:hover {
+        background-color: var(--brand-red-light);
+    }
+
     /* About */
+
 
     #about .wrapper {
         grid-template-columns: 48rem 1fr;
@@ -935,5 +1055,15 @@ body.menu-expanded nav button path{
 @media (min-width: 1025px) {
     nav#navigation .wrapper {
         margin-inline: auto;
+    }
+}
+
+@media (min-width: 1180px) {
+    #company .company-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10rem;
     }
 }
